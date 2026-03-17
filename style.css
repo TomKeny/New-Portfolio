@@ -1,0 +1,326 @@
+/* common between all pages */
+/* phone layout */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+#container {
+    min-height: 100%;
+    margin: 0;
+    display: grid;
+    grid-template-areas: 
+    'head'
+    'content'
+    'foot'
+    ;
+}
+
+#head {
+    grid-area: head;
+    display: grid;
+    grid-template-areas: 
+    'navigation navigation navigation navigation';
+    height: 40px;
+    padding: 20px;
+}
+
+#navigation {
+    grid-area: navigation;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#navigation a {
+    width: 60px;
+    padding: 3px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    background-color: white;
+
+    text-decoration: none;
+    color: black;
+
+    transition: background-colour 0.3s;
+    -webkit-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+
+
+}
+
+#navigation a:hover {
+    background-color: #f1f1f1;
+}
+
+#navigation #active {
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-decoration-color: #8dff8d;
+}
+
+#tkLogo {
+    width: 80px;
+    height: 28px;
+    grid-area: tkLogo;
+    display: none;
+}
+
+.content {
+    display: grid;
+    grid-area: content;
+    min-height: 95vh;
+}
+
+#foot {
+    grid-area: foot;
+    display: grid;
+    grid-template-areas:
+    'copyright github linkedIn .';
+    width: 100%;
+    height: 40px;
+    background-color: #f1f1f1;
+}
+
+#copyright {
+    grid-area: copyright;
+    margin: auto;
+    padding: 5px;
+    text-align: left;
+}
+
+#github, #linkedIn{
+    width:40px;
+    height: 40px;
+}
+
+#github {
+    grid-area: github;
+}
+
+#linkedIn {
+    grid-area: linkedIn;
+}
+
+/* tablet layout */
+@media (min-width: 600px) {
+    #head {
+        grid-template-areas: 
+        'tkLogo tkLogo . . navigation navigation navigation navigation';
+    }
+
+    #tkLogo {
+        display: block;
+    }
+
+    #navigation a {
+        width: 80px;
+        padding: 5px;
+        font-size: 26px;
+    }
+
+    #navigation #active {
+        text-decoration-thickness: 6px;
+    }
+
+    #foot {
+        grid-template-areas: 
+        '. copyright copyright . . . . . github linkedIn .';
+    }
+}
+
+/* desktop layout*/
+@media (min-width: 992px) {
+    #head {
+        grid-template-areas: 
+        'tkLogo tkLogo . . . . . . . . . . . . . . navigation navigation navigation navigation navigation navigation navigation navigation';
+    }
+
+    #tkLogo {
+        width: 140px;
+        height: 49px;
+        content:url("images/TKLogo.png")
+    }
+
+    #navigation a {
+        width: 120px;
+        padding: 10px;
+        font-size: 36px;
+    }
+
+    #navigation #active {
+        text-decoration-thickness: 8px;
+    }
+
+    #foot {
+        grid-template-areas: 
+        '. copyright copyright . . . . . . . . . . . . . . . . . . github linkedIn .';
+    }
+}
+
+
+/* home page */
+/* phone layout */
+#homeContent {
+    grid-template-areas: 
+    'namePlate'
+    'techStack';
+    grid-template-rows: auto 1fr;
+}
+
+#namePlate {
+    grid-area: namePlate;
+    width: 300px;
+    height: 261px;
+}
+
+#homeImage {
+    grid-area: homeImage;
+    display: none;
+}
+
+#spacer {
+    grid-area: spacer;
+    display: none;
+}
+
+#techStack {
+    grid-area: techStack;
+    display: grid;
+    grid-template-areas: 
+    'techStackTitle'
+    'frontEndStack'
+    'backEndStack'
+    'gameDevStack'
+    'toolsStack'
+    '.';
+    padding: 10px;
+    padding-bottom: 0;
+    margin: 30px;
+    margin-bottom: 0;
+    background-color: #f1f1f1;
+    border-radius: 15px 15px 0 0;
+    vertical-align: top;
+}
+
+#techStackTitle{
+    grid-area: techStackTitle;
+    height: 48px;
+    width: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-decoration: underline;
+}
+
+.techStackHeader {
+    display: none;
+}
+
+.techStackElement {
+    width: fit-content;
+    height: 20px;
+    font-size: 20px;
+    padding: 8px;
+    padding-left: 18px;
+    padding-right: 18px;
+    margin: 8px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    border-style: solid;
+    border-color: #8dff8d;
+    box-shadow: 1px 1px 4px;
+}
+
+#frontEndStack, #backEndStack, #gameDevStack, #toolsStack {
+    width: 140px;
+}
+
+#frontEndStack {
+    grid-Area: frontEndStack;
+}
+
+#backEndStack {
+    grid-area: backEndStack;
+}
+
+#gameDevStack {
+    grid-area: gameDevStack;
+}
+
+#toolsStack {
+    grid-area: toolsStack;
+}
+
+/* tablet layout */
+@media (min-width: 600px) {
+    #homeContent {
+        grid-template-areas: 
+        'spacer'
+        'namePlate'
+        'techStack';
+        grid-template-rows: auto auto 1fr;
+    }
+
+    #namePlate {
+        content:url("images/namePlate.png");
+        width: 460px;
+        height: 400px;
+    }
+    
+    #spacer {
+        display: block;
+        height: 100px;
+        width: 100%;
+    }
+
+    #techStack {
+        width: 600px;
+        margin: auto;
+        grid-template-areas: 
+        'techStackTitle techStackTitle techStackTitle techStackTitle'
+        'frontEndStack backEndStack gameDevStack toolsStack'
+        '. . . .';
+    }
+
+    .techStackHeader {
+        display: inline;
+    }
+}
+
+/* desktop layout */
+@media (min-width: 992px) {
+    #homeContent {
+        width: 990px;
+        margin: auto;
+        grid-template-areas: 
+        'spacer . .'
+        'namePlate . homeImage'
+        'techStack techStack techStack';
+        grid-template-rows: auto 1fr;
+    }
+
+    #homeImage {
+        display: block;
+        width: 380px;
+        height: 262px;
+        padding-top: 80px;
+    }
+}
+
+
+/* about page */
+/* phone layout */
