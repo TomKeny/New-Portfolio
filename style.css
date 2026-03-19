@@ -729,7 +729,7 @@ body {
     }
 
     #projectImage {
-        content:url(images/projectOneImage.png);
+        content:url("images/projectOneImage.png");
         margin-top: 10px;
         width: 460px;
         height: 340px;
