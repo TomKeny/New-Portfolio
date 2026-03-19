@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Thomas Kenyon's portfolio website">
+    <meta name="description" content="Thomas Kenyon's portfolio website contact page">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Thomas Kenyon">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -25,7 +25,34 @@
 
 
         <div id="contactContent" class="content">
-            
+            <div id="contactInformation">
+                <h3 id="contactHeader">Contact Me</h3>
+                <a href="mailto:tomkenyon2003@gmail.com" target="_blank">
+                    <img class="contactImage" src="images/emailIcon.png" alt="email icon">
+                    <h3 class="contactMethodText">tomkenyon2003@gmail.com</h3>
+                </a>
+                <div>
+                    <img class="contactImage" src="images/phoneIcon.png" alt="phone icon">
+                    <h3 class="contactMethodText">+44 123456789</h3>
+                </div>
+                <a href="https://github.com/TomKeny" target="_blank">
+                    <img class="contactImage" src="images/GitHub_Invertocat_Black.png" alt="Github Logo">
+                    <h3 class="contactMethodText">TomKeny</h3>
+                </a>
+                <a href="https://www.linkedin.com/in/thomaspkenyon/" target="_blank">
+                    <img class="contactImage" src="images/InBug-Black.png" alt="Linked in Logo">
+                    <h3 class="contactMethodText">Thomas P Kenyon</h3>
+                </a>
+            </div>
+            <div id="emailForm">
+                <form action="mailto:tomkenyon2003@gmail.com.com" method="post" enctype="text/plain">
+                    <input class="inputBox" type="text" name="Name" placeholder="Name">
+                    <input class="inputBox" type="text" name="E-mail"  placeholder="Email">
+                    <input class="inputBox" type="text" name="Subject" placeholder="Subject">
+                    <textarea id="messageBox" class="inputBox" name="Comment"  placeholder="Message"></textarea>
+                    <input id="emailSubmit" type="submit" value="Send Message">
+                </form>
+            </div>
         </div>
 
         <footer id="foot">

@@ -1,5 +1,6 @@
 /* id for targeting individual items */
 /* class for targeting repeated items */
+/* mediaquery breakpoints will be where a new layout is needed, roughly around 600px width for tablets and 1000px width for desktops
 
 /* common between all pages */
 /* phone layout */
@@ -150,7 +151,7 @@ body {
 }
 
 /* desktop layout*/
-@media (min-width: 992px) {
+@media (min-width: 1000px) {
     #head {
         grid-template-areas: 
         'tkLogo tkLogo . . . . . . . . . . . . . . navigation navigation navigation navigation navigation navigation navigation navigation';
@@ -242,6 +243,8 @@ body {
 }
 
 .techStackElement {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     height: 20px;
     font-size: 20px;
@@ -324,7 +327,7 @@ body {
 }
 
 /* desktop layout */
-@media (min-width: 992px) {
+@media (min-width: 1000px) {
     #homeContent {
         width: 990px;
         margin: auto;
@@ -465,6 +468,8 @@ body {
     }
 
     #timelineHeader {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         margin: auto;
         padding: 30px;
@@ -499,7 +504,7 @@ body {
 }
 
 /* desktop layout */
-@media (min-width: 1200px) { /* higher min width to accomodate for layout, tablet layout is suitable for smaller desktops*/
+@media (min-width: 1200px) { /* higher min width to accomodate for layout, tablet layout is still suitable for smaller desktops*/
     #aboutContent {
         padding-top: 160px;
         grid-template-areas: 
@@ -510,6 +515,8 @@ body {
     #aboutMe {
         margin-left: 10%;
         margin-right: 10px;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         max-width: 880px;
     }
@@ -640,5 +647,217 @@ body {
         margin: 30px;
         margin-top: 120px;
         font-size: 48px;
+    }
+}
+
+
+/* individual project page */
+/* phone layout */
+#projectContent {
+    grid-template-areas: 
+    'projectTitle'
+    'projectImage'
+    'projectDescription'
+    'projectSkillsHeader'
+    'projectSkills';
+    grid-template-rows: 56px auto auto 44px auto;
+    min-width: 300px;
+    width:90%;
+    margin:auto;
+}
+
+#projectTitle {
+    grid-area: projectTitle;
+    margin: 10px;
+    font-size: 36px;
+}
+
+#projectDescription {
+    grid-area: projectDescription;
+    margin: 10px;
+    padding: 10px;
+    min-height: 100px;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 4px 4px #f1f1f1;
+}
+
+#projectImage {
+    grid-area: projectImage;
+    border-style: solid;
+    box-shadow: 0 0 4px 4px #8dff8d;
+    margin:auto;
+}
+
+#projectSkillsHeader {
+    grid-area: projectSkillsHeader;
+    margin: 10px;
+    margin-left: 24px;
+    font-size: 24px;
+    height: 24px;
+}
+
+#projectSkills {
+    grid-area: projectSkills;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin-left: 10px;
+    margin-bottom: 40px;
+}
+
+/* tablet layout */
+@media (min-width: 640px) {
+    #projectContent {
+        grid-template-areas: 
+        'projectTitle .'
+        'projectDescription projectImage'
+        'projectSkillsHeader .'
+        'projectSkills .';
+        grid-template-columns: auto 320px;
+        grid-template-rows: 56px auto 44px auto;
+    }
+}
+
+/* desktop layout */
+@media (min-width: 1000px) {
+    #projectContent {
+        width: 80%;
+        min-width: 980px;
+        max-width: 1100px;
+        margin-top: 100px;
+        grid-template-columns: auto 480px;
+    }
+
+    #projectImage {
+        content:url(images/projectOneImage.png);
+        margin-top: 10px;
+        width: 460px;
+        height: 340px;
+    }
+}
+
+
+/* contact me page */
+/* phone layout */
+#contactContent {
+    grid-template-areas: 
+    'contactInformation'
+    'emailForm';
+    width: 320px;
+    margin:auto;
+}
+
+#contactHeader {
+    font-size: 36px;
+    margin: 10px;
+    text-decoration: underline;
+}
+
+#contactInformation {
+    grid-area: contactInformation;
+    width: 300px;
+}
+
+#contactInformation a {
+    text-decoration: none;
+}
+
+#contactInformation a, #contactInformation div {
+    display: flex;
+    width: 300px;
+    margin: 10px;
+}
+
+.contactImage {
+    width:40px;
+    height: 40px;
+}
+
+.contactMethodText {
+    width: 254px;
+    margin: 0;
+    padding-top: 10px;
+    margin-left: 5px;
+}
+
+#emailForm {
+    grid-area: emailForm;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 4px 4px #f1f1f1;
+    margin: 10px;
+    width: 280px;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+#emailSubmit {
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    background-color: #8dff8d;
+    color: #ffffff;
+    text-shadow: 0px 0px 3px #395239;
+}
+
+#messageBox {
+    height: 100px;
+}
+
+#emailSubmit:hover {
+    background-color: #5dd45d;
+}
+
+#emailSubmit:active {
+    background-color: #2baa2b;
+}
+
+.inputBox, #emailSubmit{
+    width: 250px;
+    padding: 2px;
+    margin: 5px;
+
+    border-style: solid;
+    border-color: #8dff8d;
+}
+
+/* tablet layout */
+@media (min-width: 620px) {
+    #contactContent {
+        width: 620px;
+        grid-template-areas: 
+        'contactInformation emailForm';
+        margin-top: 80px;
+    }
+
+    #contactInformation {
+        width: 310px;
+    }
+    
+    #emailForm {
+        margin: 0;
+        margin-top: 70px;
+        height: 250px;
+    }
+}
+
+/* desktop layout */
+@media (min-width: 1000px) {
+    #contactContent {
+        width: 900px;
+    }
+
+    .inputBox, #emailSubmit{
+        width: 500px;
+    }
+
+    #messageBox {
+        height: 180px;
+    }
+
+    #emailForm {
+        width: 520px;
+        height: 330px;
     }
 }
